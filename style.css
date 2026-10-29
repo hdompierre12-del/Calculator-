@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  background: #141326;
+  color: #fff;
+  --glass: rgba(255, 255, 255, 0.14);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at 18% 15%, rgba(104, 75, 225, .45), transparent 40%),
+    radial-gradient(ellipse at 86% 86%, rgba(236, 93, 184, .35), transparent 42%),
+    #141326;
+}
+
+.calculator {
+  width: min(100%, 370px);
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, .23);
+  border-radius: 27px;
+  background: linear-gradient(145deg, rgba(97, 70, 205, .88), rgba(183, 73, 162, .86));
+  box-shadow: 0 28px 75px rgba(0, 0, 0, .4), inset 0 1px rgba(255,255,255,.28);
+  backdrop-filter: blur(18px);
+}
+
+.screen {
+  height: 142px;
+  padding: 20px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.previous { min-height: 25px; color: rgba(255,255,255,.7); font-size: 16px; }
+.display { width: 100%; overflow: hidden; text-align: right; font-size: clamp(42px, 13vw, 62px); font-weight: 500; line-height: 1.1; letter-spacing: -2px; }
+
+.keys { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.key {
+  min-width: 0;
+  height: 68px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  background: var(--glass);
+  color: white;
+  font: inherit;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.key:hover { background: rgba(255,255,255,.25); }
+.key:active { transform: scale(.94); }
+.key:focus-visible { outline: 3px solid white; outline-offset: 2px; }
+.utility { background: rgba(47, 34, 130, .28); font-size: 20px; }
+.operator { background: rgba(52, 34, 131, .38); }
+.operator.selected { background: rgba(255,255,255,.32); }
+.zero { grid-column: span 2; }
+.equals { grid-column: span 2; background: rgba(255,255,255,.88); color: #6545b8; font-weight: 700; }
+.equals:hover { background: white; }
+.hint { margin: 15px 0 2px; text-align: center; color: rgba(255,255,255,.75); font-size: 12px; letter-spacing: .4px; }
+
+@media (max-width: 380px) {
+  .key { height: 62px; }
+  .calculator { padding: 12px; }
+}

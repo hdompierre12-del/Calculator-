@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5948c8">
+  <title>Violet Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="calculator" aria-label="Calculator">
+    <div class="screen" aria-live="polite" aria-atomic="true">
+      <div class="previous" id="previous"></div>
+      <output class="display" id="display">0</output>
+    </div>
+    <div class="keys" id="keys">
+      <button class="key utility" data-action="clear">C</button>
+      <button class="key utility" data-action="sign" aria-label="Change sign">±</button>
+      <button class="key utility" data-action="percent">%</button>
+      <button class="key operator" data-operator="÷" aria-label="Divide">÷</button>
+      <button class="key number" data-digit="7">7</button>
+      <button class="key number" data-digit="8">8</button>
+      <button class="key number" data-digit="9">9</button>
+      <button class="key operator" data-operator="×" aria-label="Multiply">×</button>
+      <button class="key number" data-digit="4">4</button>
+      <button class="key number" data-digit="5">5</button>
+      <button class="key number" data-digit="6">6</button>
+      <button class="key operator" data-operator="−" aria-label="Subtract">−</button>
+      <button class="key number" data-digit="1">1</button>
+      <button class="key number" data-digit="2">2</button>
+      <button class="key number" data-digit="3">3</button>
+      <button class="key operator" data-operator="+" aria-label="Add">+</button>
+      <button class="key number zero" data-digit="0">0</button>
+      <button class="key number" data-action="decimal">.</button>
+      <button class="key equals" data-action="equals">=</button>
+    </div>
+    <p class="hint">A little math, a little magic ✦</p>
+  </main>
+</body>
+</html>
